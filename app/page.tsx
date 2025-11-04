@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import {
   Shield,
   Lock,
@@ -9,7 +7,6 @@ import {
   Fingerprint,
   RefreshCw,
   Globe,
-  Check,
   ChevronRight,
   Star,
   Clock,
@@ -24,10 +21,8 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
 import { useTheme } from "@/app/providers";
-import { useRef, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRef } from "react";
 import { Navbar } from "@/components/layout/Navbar";
-import PasswordGenerator from "@/components/ui/PasswordGenerator";
 import { openAuthPopup } from "@/lib/authUrl";
 
 // Copy icon component - used in dashboard preview
@@ -52,8 +47,7 @@ function Copy(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function LandingPage() {
-  const { theme, setTheme } = useTheme();
-  const searchParams = useSearchParams();
+  const { theme } = useTheme();
   const demoRef = useRef<HTMLDivElement>(null);
 
   const handleViewDemo = () => {
